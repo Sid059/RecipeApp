@@ -1,0 +1,58 @@
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    min-height: 400px; /* Gives it presence without taking over */
+    background-color: #F5F5F0;
+}
+
+.empty-state-icon {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.5rem;
+    object-fit: contain;
+    opacity: 0.8;
+}
+
+.empty-state-message {
+    font-size: 2rem; /* Matches your header scale */
+    font-weight: 700; /* Matching your bold font */
+    color: #2C3E2F;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.empty-state-description {
+    font-size: 1.1rem;
+    color: #5D6D5D;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    max-width: 500px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.empty-state-button {
+    background-color: #5D866C;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 4px; /* Matching your header's clean edges */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.empty-state-button:hover {
+    background-color: #C2A68C;
+}
+
+.empty-state-button:focus-visible {
+    outline: 2px solid #5D866C;
+    outline-offset: 2px;
+}
