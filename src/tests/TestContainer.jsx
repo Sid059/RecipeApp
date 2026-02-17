@@ -1,4 +1,5 @@
 import RecipeGrid from '../components/presentational/RecipeGrid.jsx';
+import HeroSection from '../components/presentational/HeroSection.jsx';
 
 // Sample recipe data array matching TheMealDB format
 const sampleRecipes = [
@@ -83,6 +84,8 @@ export default function TestContainer() {
             }}>
                 Showing {sampleRecipes.length} recipes. Favorites: IDs {mockFavorites.join(', ')}
             </p>
+
+            <HeroSection />
 
             {/* Recipe Grid Component */}
             <RecipeGrid 

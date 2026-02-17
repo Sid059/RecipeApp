@@ -1,0 +1,129 @@
+.categories-container {
+    padding: 3rem 2rem;
+    background-color: #F5F5F0;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.categories-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2C3E2F;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.category-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    border: 1px solid #E6D8C3;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    border-color: #C2A68C;
+}
+
+.category-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid #E6D8C3;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover .category-image {
+    transform: scale(1.05);
+    border-color: #C2A68C;
+}
+
+.category-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #5D866C;
+    margin: 0.5rem 0 0 0;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+/* Optional description style if you add description later */
+.category-description {
+    font-size: 0.9rem;
+    color: #5D6D5D;
+    margin: 0.5rem 0 0 0;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .categories-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .categories-title {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .category-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .category-name {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .categories-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .categories-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .category-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .category-name {
+        font-size: 1rem;
+    }
+}
