@@ -17,6 +17,7 @@ export default function CategoryPreview({ categories, onCategoryClick}) {
                             src={category.image} 
                             alt={category.name} 
                             className={styles['category-image']}
+                            loading="lazy"
                         />
                         <p className={styles['category-name']}>{category.name}</p>
                     </div>

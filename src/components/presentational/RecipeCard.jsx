@@ -14,6 +14,7 @@ export default function RecipeCard({ recipe, onClick, isFavorite, onFavoriteTogg
                     src={recipe.strMealThumb} 
                     alt={recipe.strMeal} 
                     className={styles['recipe-img']} 
+                    loading="lazy"
                 />
             </div>
             <div className={styles['recipe-info']}>

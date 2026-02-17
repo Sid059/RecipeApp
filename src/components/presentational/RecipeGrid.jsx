@@ -14,7 +14,7 @@ export default function RecipeGrid({ recipes, favorites, onRecipeClick, onFavori
                     key={recipe.idMeal} 
                     recipe={recipe} 
                     onClick={() => onRecipeClick(recipe)} 
-                    isFavorite={favorites.includes(recipe.idMeal)}
+                    // isFavorite={favorites.includes(recipe.idMeal)} until we implement favorites functionality
                     onFavoriteToggle={onFavoriteToggle}
                 />
             ))}

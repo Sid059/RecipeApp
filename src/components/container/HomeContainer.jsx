@@ -10,6 +10,10 @@ export default function HomeContainer() {
         navigate(`/recipes?cuisine=${cuisineName}`);
     }
 
+    const handleExploreClick = () => {
+        navigate('recipes');
+    }
+
     const RECIPES_URL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 
     const { data, loading, error } = useFetch(RECIPES_URL);
@@ -25,6 +29,7 @@ export default function HomeContainer() {
             error={error}
             cuisines={cuisines}
             onCuisineClick={handleCuisineClick}
+            onExploreClick={handleExploreClick}
         />
     )
 }
