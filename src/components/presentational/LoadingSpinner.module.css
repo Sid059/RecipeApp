@@ -1,3 +1,12 @@
+/* Loading state container - centers the spinner */
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    width: 100%;
+}
+
 .spinner-container {
     display: flex;
     justify-content: center;
