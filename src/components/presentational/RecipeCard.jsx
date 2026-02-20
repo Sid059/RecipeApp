@@ -1,10 +1,16 @@
 import styles from './RecipeCard.module.css';
+import { useFavorites } from '../../context/FavoritesContext.jsx';
 
-export default function RecipeCard({ recipe, onClick, isFavorite, onFavoriteToggle }) {
+export default function RecipeCard({ recipe, onClick }) {
+
+    const { toggleFavorite, isFavorite } = useFavorites();
+    //console.log('Favorites:', favorites);
+
+    const favorite = isFavorite(recipe.idMeal);
 
     const handleHeartClick = (e) => {
         e.stopPropagation(); // Stop the click event from bubbling up to the card's onClick
-        onFavoriteToggle(recipe.idMeal); // Call the function with recipe ID
+        toggleFavorite(recipe.idMeal); // Call the function with recipe ID
     };
 
     return (
@@ -22,8 +28,8 @@ export default function RecipeCard({ recipe, onClick, isFavorite, onFavoriteTogg
                 <p className={styles['recipe-category']}>{recipe.strCategory}</p>
                 <div className={styles['heart-icon-container']} onClick={handleHeartClick}>
                     <img 
-                        src={isFavorite ? "/heart_filled.png" : "/heart_empty.png"}
-                        alt={isFavorite ? "Remove from favorites" : "Add to favorites"} 
+                        src={favorite ? "/heart_filled.png" : "/heart_empty.png"}
+                        alt={favorite ? "Remove from favorites" : "Add to favorites"} 
                         className={styles['heart-icon']}
                     />
                 </div>

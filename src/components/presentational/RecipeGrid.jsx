@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import RecipeCard from "./RecipeCard";
 import styles from './RecipeGrid.module.css';
 
-export default function RecipeGrid({ recipes, favorites, onFavoriteToggle }) {
+export default function RecipeGrid({ recipes }) {
     const navigate = useNavigate();
 
     const handleRecipeClick = (recipe) => {
@@ -22,7 +22,7 @@ export default function RecipeGrid({ recipes, favorites, onFavoriteToggle }) {
                     recipe={recipe} 
                     onClick={() => handleRecipeClick(recipe)} 
                     // isFavorite={favorites.includes(recipe.idMeal)} until we implement favorites functionality
-                    onFavoriteToggle={onFavoriteToggle}
+                    //onFavoriteToggle={onFavoriteToggle}
                 />
             ))}
         </div>
