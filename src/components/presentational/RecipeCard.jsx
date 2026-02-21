@@ -10,7 +10,7 @@ export default function RecipeCard({ recipe, onClick }) {
 
     const handleHeartClick = (e) => {
         e.stopPropagation(); // Stop the click event from bubbling up to the card's onClick
-        toggleFavorite(recipe.idMeal); // Call the function with recipe ID
+        toggleFavorite(recipe); // Call the function with recipe ID
     };
 
     return (

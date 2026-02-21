@@ -1,5 +1,14 @@
+import { useFavorites } from "../../context/FavoritesContext";
+
+import FavoritesPage from "../presentational/FavoritesPage";
+
+
 export default function FavoritesContainer(){
+    const { favorites } = useFavorites();
+
     return (
-        <div>Favorites Page will show saved recipes</div>
+        <FavoritesPage 
+            recipes={favorites}
+        />
     )
 }

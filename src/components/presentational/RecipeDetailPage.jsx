@@ -2,6 +2,8 @@ import styles from './RecipeDetailPage.module.css';
 import LoadingSpinner from './LoadingSpinner.jsx';
 import EmptyState from '../container/EmptyState.jsx';
 
+import BackButton from './BackButton.jsx';
+
 export default function RecipeDetailPage({ recipe, loading, error, onGoBack }) {
 
     const getIngredients = recipe => {
@@ -45,9 +47,7 @@ export default function RecipeDetailPage({ recipe, loading, error, onGoBack }) {
 
     return (
         <div className={styles['detail-page']}>
-            <button className={styles['back-button']} onClick={onGoBack}>
-                &larr; Back
-            </button>
+            <BackButton />
             
             <h1 className={styles['detail-title']}>{recipe.strMeal}</h1>
             

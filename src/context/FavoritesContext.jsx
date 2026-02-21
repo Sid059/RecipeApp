@@ -1,3 +1,5 @@
+// wont be using as there is rate limit on the API and the theMealDB API does not support batch fetching of recipes by IDs, so we would have to make individual requests for each favorite recipe, which is inefficient and could lead to hitting the rate limit. Instead, we will store the entire recipe object in localStorage when a user favorites a recipe, allowing us to display the favorites without needing to fetch them again from the API.
+
 import { createContext, useContext, useMemo } from "react";
 import useLocalStorage from '../hooks/useLocalStorage.js';
 
@@ -8,17 +10,18 @@ export function FavoriteProvider({ children }) {
     const [favorites, setFavorites] = useLocalStorage('favorites', []);
 
     // toggleFavorite function to add or remove a recipe ID from the favorites list
-    const toggleFavorite = (recipeId) => {
+    const toggleFavorite = (recipe) => {
         setFavorites(prev => {
-            if (prev.includes(recipeId)) {
-                return prev.filter(id => id !== recipeId);
+            const exists = prev.some(fav => fav.idMeal === recipe.idMeal);
+            if (exists) {
+                return prev.filter(fav => fav.idMeal !== recipe.idMeal);
             } else {
-                return [...prev, recipeId];
+                return [...prev, recipe];
             }
         });
     }
 
-    const isFavorite = recipeId => favorites.includes(recipeId);
+    const isFavorite = recipeId => favorites.some(fav => fav.idMeal === recipeId);
 
     const value = useMemo(() => ({
         favorites,

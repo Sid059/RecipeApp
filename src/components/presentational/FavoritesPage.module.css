@@ -1,0 +1,38 @@
+.favorites-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #F5F5F0;
+    min-height: calc(100vh - 160px);
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2C3E2F;
+    margin-bottom: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .favorites-page {
+        padding: 1.5rem;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .favorites-page {
+        padding: 1rem;
+    }
+    
+    .page-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+}

@@ -12,6 +12,7 @@ export default function useFetch(url, options = {}){
         }
 
         let isMounted = true; //isMounted tracks if component is still on screen
+        
         const abortController = new AbortController();  //to handle component unmounting while fetch is in progress
         
         (async function fetchData() {
