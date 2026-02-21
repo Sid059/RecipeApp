@@ -4,7 +4,7 @@ import EmptyState from '../container/EmptyState.jsx';
 
 import BackButton from './BackButton.jsx';
 
-export default function RecipeDetailPage({ recipe, loading, error, onGoBack }) {
+export default function RecipeDetailPage({ recipe, loading, error }) {
 
     const getIngredients = recipe => {
         const ingredients = [];

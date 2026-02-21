@@ -76,3 +76,93 @@
 .heart-icon:hover {
     transform: scale(1.15);
 }
+
+
+/* ===== TABLET (768px and below) ===== */
+@media (max-width: 768px) {
+    .recipe-img-container {
+        height: 180px;
+    }
+    
+    .recipe-info {
+        padding: 1rem;
+    }
+    
+    .recipe-title {
+        font-size: 1rem;
+    }
+    
+    .recipe-category {
+        font-size: 0.85rem;
+        padding: 0.2rem 0.6rem;
+    }
+}
+
+/* ===== MOBILE (480px and below) - 2 COLUMNS ===== */
+@media (max-width: 480px) {
+    .recipe-img-container {
+        height: 120px;  /* Much shorter for 2-column layout */
+    }
+    
+    .recipe-info {
+        padding: 0.7rem;
+        gap: 0.25rem;
+    }
+    
+    .recipe-title {
+        font-size: 0.85rem;
+        font-weight: 600;
+        /* Limit to 2 lines */
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.3;
+    }
+    
+    .recipe-category {
+        font-size: 0.7rem;
+        padding: 0.15rem 0.5rem;
+        /* Ensure category doesn't overflow */
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .heart-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .heart-icon-container {
+        margin-top: 0.2rem;
+    }
+}
+
+/* ===== VERY SMALL PHONES (360px and below) ===== */
+@media (max-width: 360px) {
+    .recipe-img-container {
+        height: 100px;
+    }
+    
+    .recipe-info {
+        padding: 0.5rem;
+    }
+    
+    .recipe-title {
+        font-size: 0.75rem;
+        -webkit-line-clamp: 2;
+    }
+    
+    .recipe-category {
+        font-size: 0.6rem;
+        padding: 0.1rem 0.4rem;
+    }
+    
+    .heart-icon {
+        width: 18px;
+        height: 18px;
+    }
+}

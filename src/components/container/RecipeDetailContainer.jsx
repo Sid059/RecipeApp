@@ -1,14 +1,8 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch.js';
 import RecipeDetailPage from '../presentational/RecipeDetailPage.jsx';
 
 export default function RecipeDetailContainer(){
-
-    const navigate = useNavigate();
-
-    const handleGoback = () => {
-        navigate(-1);   //go back to precvious page in history stack,
-    }
 
     const { id } = useParams();
 
@@ -26,7 +20,6 @@ export default function RecipeDetailContainer(){
             recipe={recipe}
             loading={loading}
             error={error}
-            onGoBack={handleGoback}
         />
     )
 }

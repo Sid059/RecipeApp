@@ -26,11 +26,24 @@ export default function HomePage({ featuredRecipes, loading, error, cuisines, on
                 )}
 
                 {error && !loading && (
-                    <EmptyState />
+                    <EmptyState 
+                        message="Failed to load featured recipes"
+                        icon="/NotFoundIcon.png"
+                        description="We couldn't load the featured recipes right now. Please try again later."
+                        actionType="home"
+                    />
                 )}
 
                 {!loading && !error && featuredRecipes.length === 0 && (
-                    <EmptyState />
+                    <EmptyState 
+                        message="No featured recipes found"
+                        icon="/NotFoundIcon.png"
+                        description="We couldn't find any featured recipes at the moment. Check back later!"
+                        actionType={{
+                            buttonText: 'Browse All Recipes',
+                            path: '/recipes'  // Takes user to browse all recipes
+                        }}
+                    />
                 )}
 
                 {!loading && !error && featuredRecipes.length > 0 && (
