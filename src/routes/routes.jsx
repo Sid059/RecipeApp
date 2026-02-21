@@ -10,7 +10,7 @@ const routes = createBrowserRouter(createRoutesFromElements(
     <Route path='/' element={<Root />}>
         <Route index element={<HomeContainer />} />
         <Route path='recipes' element={<RecipesContainer />} />
-        <Route path='recipes/:id' element={<RecipeDetailContainer />} />
+        <Route path='recipe/:id' element={<RecipeDetailContainer />} />
         <Route path='favorites' element={<FavoritesContainer />} />
         <Route path='add-recipe' element={<AddRecipeContainer />} />
     </Route>

@@ -1,3 +1,5 @@
+// wont be using as there is rate limit on the API and the theMealDB API does not support batch fetching of recipes by IDs, so we would have to make individual requests for each favorite recipe, which is inefficient and could lead to hitting the rate limit. Instead, we will store the entire recipe object in localStorage when a user favorites a recipe, allowing us to display the favorites without needing to fetch them again from the API.
+
 import { useState, useEffect } from 'react';
 
 export default function useMultipleFetch(urls = []) {

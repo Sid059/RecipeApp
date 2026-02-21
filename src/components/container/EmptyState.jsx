@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import EmptyStatePresentational from '../presentational/EmptyStatePresentational';
+import EmptyStatePresentational from '../presentational/EmptyStatePresentational.jsx';
 
 export default function EmptyState({ 
     message = 'Something went wrong.', 
@@ -35,7 +35,7 @@ export default function EmptyState({
     else if (typeof actionType === 'object') {
         config = {
             text: actionType.buttonText || 'Go Back',
-            action: () => navigate(actionType.path)
+            action: actionType.action || (() => navigate(actionType.path))
         };
     } 
     else {
@@ -50,5 +50,5 @@ export default function EmptyState({
             onAction={config.action}
             buttonText={config.text}
        />
-    )
+    );
 }

@@ -6,7 +6,7 @@ export default function RecipeGrid({ recipes }) {
     const navigate = useNavigate();
 
     const handleRecipeClick = (recipe) => {
-        navigate(`/recipes/${recipe.idMeal}`);
+        navigate(`/recipe/${recipe.idMeal}`);
     }
 
     if (!recipes || recipes.length === 0) {
