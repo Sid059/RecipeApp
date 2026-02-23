@@ -12,8 +12,8 @@ export default function RecipeDetailContainer(){
 
     const recipe = data?.meals?.[0] || [];  //.meals?.[0] beacause the API returns an array of meals but with only one meal object when we search by ID.
 
-    console.log('Full data:', data);
-    console.log('Extracted recipe:', recipe);
+    // console.log('Full data:', data);
+    // console.log('Extracted recipe:', recipe);
 
     return (
         <RecipeDetailPage

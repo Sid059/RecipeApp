@@ -1,6 +1,7 @@
 import styles from './FilterBar.module.css';
+import { memo } from 'react';
 
-export default function FilterBar({ selectedCategory, onCategoryChange, onClearFilters }) {
+export default memo(function FilterBar({ selectedCategory, onCategoryChange, onClearFilters }) {
     
     const categories = [
         'Beef', 'Chicken', 'Dessert', 'Lamb', 
@@ -47,4 +48,4 @@ export default function FilterBar({ selectedCategory, onCategoryChange, onClearF
             <div className={styles['filter-section-divider']}></div>
         </div>
     );
-}
+});

@@ -4,7 +4,9 @@ import styles from './FavoritesPage.module.css';
 
 import BackButton from './BackButton.jsx';
 
-export default function FavoritesPage({ recipes }) {
+import { memo } from 'react';
+
+export default memo(function FavoritesPage({ recipes }) {
 
     if (!recipes || recipes.length === 0) {
         return (
@@ -26,4 +28,4 @@ export default function FavoritesPage({ recipes }) {
             <RecipeGrid recipes={recipes} />
         </div>
     );
-}
+});

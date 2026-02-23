@@ -40,9 +40,9 @@ export default function RecipeDetailPage({ recipe, loading, error }) {
     const ingredientsList = getIngredients(recipe);
     
     // Debug: Log the entire recipe
-    console.log('Full recipe object:', recipe);
-    console.log('First ingredient field:', recipe.strIngredient1);
-    console.log('First measure field:', recipe.strMeasure1);
+    // console.log('Full recipe object:', recipe);
+    // console.log('First ingredient field:', recipe.strIngredient1);
+    // console.log('First measure field:', recipe.strMeasure1);
 
 
     return (

@@ -2,7 +2,7 @@ import styles from './RecipeCard.module.css';
 import { useFavorites } from '../../context/FavoritesContext.jsx';
 import { memo } from 'react';
 
-export default memo(function RecipeCard({ recipe, onClick }) {
+export default memo(function RecipeCard({ recipe, onRecipeClick }) {
 
     const { toggleFavorite, isFavorite } = useFavorites();
     //console.log('Favorites:', favorites);
@@ -14,8 +14,12 @@ export default memo(function RecipeCard({ recipe, onClick }) {
         toggleFavorite(recipe); // Call the function with recipe ID
     };
 
+    const handleCardClick = () => {
+        onRecipeClick(recipe);
+    };
+
     return (
-        <div className={styles['recipe-card']} onClick={onClick}>
+        <div className={styles['recipe-card']} onClick={handleCardClick}>
             <div className={styles['recipe-img-container']}>
                 <img 
                     src={recipe.strMealThumb} 

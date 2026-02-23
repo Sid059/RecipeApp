@@ -1,6 +1,7 @@
 import styles from './CategoryPreview.module.css';
+import { memo } from 'react';
 
-export default function CategoryPreview({ categories, onCategoryClick}) {
+export default memo(function CategoryPreview({ categories, onCategoryClick}) {
 
     return (
         <div className={styles["categories-container"]}>
@@ -25,4 +26,4 @@ export default function CategoryPreview({ categories, onCategoryClick}) {
             </div>
         </div>
     )
-}
+});

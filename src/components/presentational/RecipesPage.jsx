@@ -4,8 +4,9 @@ import RecipeGrid from './RecipeGrid';
 import LoadingSpinner from './LoadingSpinner';
 import EmptyState from '../container/EmptyState';
 import styles from './RecipesPage.module.css';
+import { memo } from 'react';
 
-export default function RecipesPage({
+export default memo(function RecipesPage({
     recipes,
     loading,
     error,
@@ -82,4 +83,4 @@ export default function RecipesPage({
             )}
         </div>
     );
-}
+});

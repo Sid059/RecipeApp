@@ -4,8 +4,9 @@ import RecipeGrid from "./RecipeGrid.jsx";
 import LoadingSpinner from "./LoadingSpinner.jsx";
 import EmptyState from "../container/EmptyState.jsx";
 import styles from './HomePage.module.css';
+import { memo } from 'react';
 
-export default function HomePage({ featuredRecipes, loading, error, cuisines, onCuisineClick, onExploreClick}) {
+export default memo(function HomePage({ featuredRecipes, loading, error, cuisines, onCuisineClick, onExploreClick}) {
 
     return (
         <div className={styles["home-page"]}>
@@ -55,4 +56,4 @@ export default function HomePage({ featuredRecipes, loading, error, cuisines, on
             </section>
         </div>
     )
-}
+});
