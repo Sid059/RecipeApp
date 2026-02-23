@@ -1,8 +1,8 @@
 import styles from './RecipeCard.module.css';
 import { useFavorites } from '../../context/FavoritesContext.jsx';
+import { memo } from 'react';
 
-
-export default function RecipeCard({ recipe, onClick }) {
+export default memo(function RecipeCard({ recipe, onClick }) {
 
     const { toggleFavorite, isFavorite } = useFavorites();
     //console.log('Favorites:', favorites);
@@ -37,4 +37,4 @@ export default function RecipeCard({ recipe, onClick }) {
             </div>
         </div>
     );
-}
+});
