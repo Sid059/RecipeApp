@@ -4,7 +4,7 @@ export default function CategoryPreview({ categories, onCategoryClick}) {
 
     return (
         <div className={styles["categories-container"]}>
-            <h2 className={styles["categories-title"]} aria-label='Browse by Category'> Browse by Category </h2>
+            <h2 className={styles["categories-title"]} aria-label='Browse by Cuisines'> Browse by Cuisines </h2>
             <div className={styles['categories-grid']}>
                 {categories.map(category => (
                     <div 

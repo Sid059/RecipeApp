@@ -26,7 +26,7 @@ export default function FilterBar({ selectedCategory, onCategoryChange, onClearF
                     }`}
                     onClick={onClearFilters}
                 >
-                    ✕ Clear Filters
+                    × Clear Filters
                 </button>
             </div>
 

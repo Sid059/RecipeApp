@@ -1,5 +1,5 @@
-import SearchBar from './SearchBar.jsx';  // We'll build this next
-import FilterBar from './FilterBar.jsx';  // We'll build this next
+import SearchBar from './SearchBar.jsx';
+import FilterBar from './FilterBar.jsx';
 import RecipeGrid from './RecipeGrid';
 import LoadingSpinner from './LoadingSpinner';
 import EmptyState from '../container/EmptyState';
@@ -71,11 +71,11 @@ export default function RecipesPage({
                 <EmptyState 
                     message="No recipes found"
                     description="Try adjusting your search or filters"
-                    actionType={{
+                    actionType={hasActiveFilters ? {
                         buttonText: 'Clear Filters',
                         path: '/recipes',
                         action: onClearFilters
-                    }}
+                    } : 'home'}
                 />
             ) : (
                 <RecipeGrid recipes={recipes} />

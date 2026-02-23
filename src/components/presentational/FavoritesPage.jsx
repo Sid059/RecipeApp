@@ -9,7 +9,6 @@ export default function FavoritesPage({ recipes }) {
     if (!recipes || recipes.length === 0) {
         return (
             <div className={styles['favorites-page']}>
-                <h1 className={styles['page-title']}>Your Favorites</h1>
                 <EmptyState 
                     message={"Your favorites are empty"}
                     icon={"/empty-folder-icon.png"}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, createSearchParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch.js';
 import useDebounce from '../../hooks/useDebounce.js';
 import RecipesPage from '../presentational/RecipesPage.jsx'
@@ -16,6 +16,7 @@ export default function RecipesContainer() {
 
     const debouncedSearch = useDebounce(searchTerm, 1000);
 
+    //API URL builder
     const getApiUrl = () => {
     if (debouncedSearch) {
         return `https://www.themealdb.com/api/json/v1/1/search.php?s=${debouncedSearch}`;
@@ -33,7 +34,7 @@ export default function RecipesContainer() {
 
     const { data, loading, error } = useFetch(getApiUrl());
     const recipes = data?.meals || [];
-    console.log('Fetched recipes:', recipes.length);
+    //console.log('Fetched recipes:', recipes.length);
 
     useEffect(() => {
         const params = {};
@@ -42,7 +43,7 @@ export default function RecipesContainer() {
         if (selectedCategory) params.category = selectedCategory;
         if (selectedCuisine) params.cuisine = selectedCuisine;
 
-        setSearchParams(params);
+        setSearchParams(createSearchParams(params));
     }, [searchTerm, selectedCategory, selectedCuisine, setSearchParams]);
 
 

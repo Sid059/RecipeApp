@@ -1,6 +1,7 @@
 import styles from './RecipeCard.module.css';
 import { useFavorites } from '../../context/FavoritesContext.jsx';
 
+
 export default function RecipeCard({ recipe, onClick }) {
 
     const { toggleFavorite, isFavorite } = useFavorites();
